@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Member | Django CRUD</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="main-container animate-fade-in" style="max-width: 600px;">
+        <header class="page-header">
+            <div>
+                <h1>Modify Member Profile</h1>
+                <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.25rem;">Update the existing information for this member record.</p>
+            </div>
+            <a href="{% url 'index' %}" class="btn btn-outline">Discard Changes</a>
+        </header>
+
+        <section class="card">
+            <form action="{% url 'uprec' id=mem.id %}" method="POST">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="first">First Name</label>
+                    <input type="text" name="first" id="first" value="{{mem.firstname}}" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last">Last Name</label>
+                    <input type="text" name="last" id="last" value="{{mem.lastname}}" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" name="country" id="country" value="{{mem.country}}" class="form-input" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" style="flex: 1;">Save Changes</button>
+                    <a href="{% url 'index' %}" class="btn btn-outline" style="flex: 1;">Return Dashboard</a>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

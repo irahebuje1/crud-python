@@ -1,0 +1,14 @@
+{
+    "venvPath": ".",
+    "venv": ".venv",
+    "include": [
+        "mypro"
+    ],
+    "executionEnvironments": [
+        {
+            "root": "mypro"
+        }
+    ],
+    "reportMissingImports": true,
+    "analyzeUnannotatedFunctions": true
+}

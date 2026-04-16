@@ -1,0 +1,12 @@
+{
+  "source_directories": [
+    "mypro"
+  ],
+  "search_path": [
+    "/home/dev/crup_django_python-/.venv/lib/python3.10/site-packages"
+  ],
+  "exclude": [
+    "**/__pycache__/*",
+    "**/.venv/*"
+  ]
+}
